@@ -25,12 +25,17 @@ export const Nav = styled.nav`
 
   a {
     text-decoration: none;
-    color: ${(props) => props.theme['dark-gray']};
+    color: ${(props) => props.theme.lightGrey};
 
     display: flex;
     align-items: center;
 
     gap: 0.2rem;
+    transition: 0.3s;
+
+    &:hover {
+      color: ${(props) => props.theme['dark-gray']};
+    }
   }
 `
 
@@ -56,6 +61,7 @@ export const Buttons = styled.button`
   border-radius: 0.5rem;
 
   cursor: pointer;
+  transition: 0.3s;
 
   &:hover {
     border: solid 2px ${(props) => props.theme['dark-gray']};
