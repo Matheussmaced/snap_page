@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './styles/@themes/default'
 import { GlobalStyles } from './styles/global'
 import { HeaderComponent } from './components/header'
+import { BodyComponent } from './components/body'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <GlobalStyles />
 
         <HeaderComponent />
+        <BodyComponent />
       </ThemeProvider>
     </>
   )
