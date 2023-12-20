@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import * as Dialog from '@radix-ui/react-dialog'
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -66,4 +67,50 @@ export const Buttons = styled.button`
   &:hover {
     border: solid 2px ${(props) => props.theme['dark-gray']};
   }
+`
+
+export const DialogContainer = styled.div`
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: ${(props) => props.theme['dark-gray']};
+  color: ${(props) => props.theme.white};
+  padding: 3rem;
+  border-radius: 8px;
+`
+
+export const DialogHeader = styled.div`
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 1rem;
+`
+
+export const Title = styled(Dialog.Title)`
+  margin-bottom: 2rem;
+
+  text-align: center;
+`
+
+export const IconContainer = styled(Dialog.Close)`
+  background-color: transparent;
+  border: none;
+  position: relative;
+  top: -2rem;
+  right: -2rem;
+
+  cursor: pointer;
+  margin-bottom: 2rem;
+`
+
+export const Overlay = styled(Dialog.Overlay)`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
 `
