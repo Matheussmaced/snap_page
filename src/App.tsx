@@ -1,8 +1,8 @@
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from './styles/@themes/default'
 import { GlobalStyles } from './styles/global'
-import { HeaderComponent } from './components/Header/index'
-import { BodyComponent } from './components/Body/index'
+import { HeaderComponent } from './components/Header'
+import { BodyComponent } from './components/Body'
 
 function App() {
   return (
