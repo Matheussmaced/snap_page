@@ -16,8 +16,27 @@ import {
 import * as Dialog from '@radix-ui/react-dialog'
 import { LoginComponent } from './components/Login'
 import { RegisterComponent } from './components/Register'
+import { useEffect, useState } from 'react'
+import { api } from './lib/axios'
+import axios from 'axios'
 
 export const HeaderComponent = () => {
+  const [users, setUsers] = useState([])
+
+  const getUsers = async () => {
+    try {
+      const response = await axios.get('http://localhost:3333/users')
+
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getUsers()
+  }, [])
+
   return (
     <HeaderContainer>
       <LogoAndInforms>
