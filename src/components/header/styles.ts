@@ -50,8 +50,10 @@ export const ButtonsContainer = styled.div`
   gap: 1rem;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 
   margin-left: 15rem;
+  text-align: center;
 `
 
 export const Buttons = styled.button`
@@ -113,4 +115,13 @@ export const Overlay = styled(Dialog.Overlay)`
   height: 100vh;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.85);
+`
+
+export const NameUser = styled.span`
+  text-align: center;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem 0 0;
 `

@@ -9,6 +9,7 @@ import {
   HeaderInforms,
   IconContainer,
   LogoAndInforms,
+  NameUser,
   Nav,
   Overlay,
   Title,
@@ -18,16 +19,16 @@ import { LoginComponent } from './components/Login'
 import { RegisterComponent } from './components/Register'
 import { useEffect, useState } from 'react'
 import { api } from './lib/axios'
-import axios from 'axios'
 
 export const HeaderComponent = () => {
   const [users, setUsers] = useState([])
 
   const getUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3333/users')
+      const response = await api.get('')
 
-      console.log(response)
+      const data = response.data
+      setUsers(data)
     } catch (error) {
       console.log(error)
     }
@@ -36,6 +37,10 @@ export const HeaderComponent = () => {
   useEffect(() => {
     getUsers()
   }, [])
+
+  useEffect(() => {
+    console.log(users)
+  }, [users])
 
   return (
     <HeaderContainer>
@@ -55,6 +60,8 @@ export const HeaderComponent = () => {
           </Nav>
 
           <ButtonsContainer>
+            <NameUser>Name</NameUser>
+
             <Dialog.Root>
               <Dialog.Trigger asChild>
                 <Buttons>Login</Buttons>
