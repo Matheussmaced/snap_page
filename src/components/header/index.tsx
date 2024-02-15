@@ -25,7 +25,7 @@ export const HeaderComponent = () => {
 
   const getUsers = async () => {
     try {
-      const response = await api.get('')
+      const response = await api.get('/users')
 
       const data = response.data
       setUsers(data)

@@ -5,6 +5,7 @@ import {
   LoginContainer,
   Submit,
 } from './styles'
+import { api } from '../../lib/axios'
 
 interface FormData {
   email: string
@@ -18,8 +19,13 @@ export const RegisterComponent = () => {
     formState: { errors },
   } = useForm<FormData>()
 
-  const onSubmit = (data: FormData) => {
-    console.log(data)
+  const onSubmit = async (data: FormData) => {
+    const { email, password } = data
+
+    await api.post('/users', {
+      email,
+      password,
+    })
   }
 
   return (
